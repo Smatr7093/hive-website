@@ -8,7 +8,7 @@ const STEP_LABELS = ['01 Browse', '02 Book', '03 Meet'];
 export function HowItWorks() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-300%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
   const fill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
