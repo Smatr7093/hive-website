@@ -1,0 +1,69 @@
+/* app/globals.css — Hive design tokens for Tailwind v4
+   Drop-in replacement for the current globals.css.
+   Exact values mirror reference/tokens/colors.css + typography.css. */
+
+@import "tailwindcss";
+
+@theme {
+  /* Fonts (wired to next/font CSS variables set in layout.tsx) */
+  --font-display: var(--font-display), "Quicksand", system-ui, sans-serif;
+  --font-body:    var(--font-body), "Noto Sans", system-ui, sans-serif;
+
+  /* Brand palette */
+  --color-cream:        #f5efe6;
+  --color-beige:        #e6d5c3;
+  --color-beige-press:  #dcc8b4;
+  --color-panel:        #ffffff;
+  --color-charcoal:     #2c2c2c;
+  --color-gray:         #4a4543;
+  --color-taupe:        #8b7f76;
+  --color-accent:       #c96a3d;
+  --color-accent-hover: #b85e35;
+  --color-accent-press: #a8562f;
+  --color-success:      #6b8e5f;
+  --color-warning:      #d9955b;
+  --color-danger:       #c45e4a;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+}
+
+/* Semantic aliases + soft fills (use via var() or arbitrary Tailwind values) */
+:root {
+  --bg: var(--color-cream);
+  --surface: var(--color-beige);
+  --panel: var(--color-panel);
+  --text: var(--color-charcoal);
+  --muted: var(--color-gray);
+  --muted-2: var(--color-taupe);
+  --accent: var(--color-accent);
+  --accent-hover: var(--color-accent-hover);
+  --accent-pressed: var(--color-accent-press);
+  --accent-soft:   rgba(201, 106, 61, 0.10);
+  --accent-soft-2: rgba(201, 106, 61, 0.18);
+  --border:   rgba(44, 44, 44, 0.09);
+  --border-2: rgba(44, 44, 44, 0.14);
+
+  /* Warm, low-opacity elevation */
+  --elevation-1: 0 1px 3px rgba(44,44,44,.08), 0 8px 24px rgba(44,44,44,.06);
+  --elevation-2: 0 8px 28px rgba(44,44,44,.12);
+  --elevation-3: 0 18px 46px rgba(44,44,44,.16);
+  --elevation-hover: 0 28px 62px rgba(44,44,44,.22);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body);
+       -webkit-font-smoothing: antialiased; overflow-x: clip; }
+::selection { background: var(--accent-soft-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

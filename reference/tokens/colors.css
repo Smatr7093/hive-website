@@ -1,0 +1,61 @@
+/* ── Hive color tokens ──
+   Warm, calm, honest. A cream canvas, charcoal ink, and one burnt-orange accent.
+   Base values first, then semantic aliases. Use the aliases in product code. */
+
+:root {
+  /* ── Brand palette (base) ── */
+  --hive-cream:        #f5efe6;  /* page background / off-white canvas */
+  --hive-beige:        #e6d5c3;  /* surface, card & input borders */
+  --hive-beige-press:  #dcc8b4;  /* pressed secondary surface */
+  --hive-white:        #ffffff;  /* panels, raised cards */
+  --hive-charcoal:     #2c2c2c;  /* primary text, headings, ink */
+  --hive-gray:         #4a4543;  /* secondary text, nav labels */
+  --hive-taupe:        #8b7f76;  /* muted text, placeholders, inactive icons */
+
+  --hive-orange:        #c96a3d;  /* primary CTA / accent */
+  --hive-orange-press:  #a8562f;  /* active / pressed */
+  --hive-orange-hover:  #b85e35;  /* hover */
+
+  /* ── Semantic / status (base) ── */
+  --hive-success: #6b8e5f;  /* verified, positive confirmation */
+  --hive-warning: #d9955b;  /* alerts, focus rings, caution */
+  --hive-danger:  #c45e4a;  /* errors, destructive */
+  --hive-danger-press: #b05444;
+
+  /* ════════════════════════════════════════════
+     SEMANTIC ALIASES — use these in product code
+     ════════════════════════════════════════════ */
+
+  /* Surfaces */
+  --bg:       var(--hive-cream);      /* app / page background */
+  --surface:  var(--hive-beige);      /* cards on cream, input borders */
+  --panel:    var(--hive-white);      /* raised white card / sheet */
+
+  /* Text */
+  --text:    var(--hive-charcoal);    /* primary copy + headings */
+  --muted:   var(--hive-gray);        /* secondary copy, nav labels */
+  --muted-2: var(--hive-taupe);       /* placeholders, metadata, inactive */
+  --on-accent: #ffffff;               /* text/icon on orange */
+
+  /* Accent */
+  --accent:         var(--hive-orange);
+  --accent-hover:   var(--hive-orange-hover);
+  --accent-pressed: var(--hive-orange-press);
+  --accent-disabled: rgba(201, 106, 61, 0.38);
+  --accent-soft:    rgba(201, 106, 61, 0.10);  /* ghost hover, soft fills */
+  --accent-soft-2:  rgba(201, 106, 61, 0.18);  /* stronger soft fill */
+
+  /* Status */
+  --success: var(--hive-success);
+  --warning: var(--hive-warning);
+  --danger:  var(--hive-danger);
+  --success-soft: rgba(107, 142, 95, 0.10);
+  --warning-soft: rgba(217, 149, 91, 0.10);
+  --danger-soft:  rgba(196, 94, 74, 0.10);
+
+  /* Lines & scrims */
+  --border:  rgba(44, 44, 44, 0.09);  /* hairline divider */
+  --border-2: rgba(44, 44, 44, 0.14); /* stronger outline (chips, buttons) */
+  --overlay: rgba(44, 44, 44, 0.60);  /* modal scrim over content */
+  --scrim:   rgba(44, 44, 44, 0.32);  /* light scrim, bottom sheets */
+}

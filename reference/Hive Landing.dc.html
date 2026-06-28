@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f5efe6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f5efe6"/>
+    <path d="M600 250 L760 340 L760 520 L600 610 L440 520 L440 340 Z" fill="none" stroke="#c96a3d" stroke-width="30" stroke-linejoin="round"/>
+    <circle cx="600" cy="430" r="48" fill="#c96a3d"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/motion.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/tokens/base.css">
+<link rel="stylesheet" href="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/styles.css">
+<script src="_ds/hive-design-system-00dba1b0-e407-4a04-89d4-709f0cae219a/_ds_bundle.js"></script>
+<title>Hive · Find people who want to be there</title>
+<meta name="description" content="Hive helps you find people nearby who share what you love, from coffee and walks to music and sport, and book real, unhurried time together. No swiping. No pressure. Book time, not expectations.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon/app_icon.svg">
+<meta property="og:title" content="Hive · Find people who want to be there">
+<meta property="og:description" content="Find people nearby who share what you love, and book real time together. Connection without pressure.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/app_icon/app_icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hive · Find people who want to be there">
+<meta name="twitter:description" content="Find people nearby who share what you love, and book real time together.">
+<meta name="twitter:image" content="assets/app_icon/app_icon.png">
+<style>
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
+  body { overflow-x: clip; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { background: var(--bg); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent-soft-2); }
+  a { -webkit-tap-highlight-color: transparent; }
+  .hl { position: relative; white-space: nowrap; }
+  .hl > svg { position: absolute; left: -2%; bottom: -0.32em; width: 104%; height: 0.5em; overflow: visible; }
+  @keyframes hb_float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+  @keyframes hb_float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+  @keyframes mq-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes mq-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @keyframes hb_breathe { 0% { transform: translateX(-50%) scale(1); opacity: .72; } 100% { transform: translateX(-50%) scale(1.12); opacity: 1; } }
+  [data-mq]:hover [data-mq-track] { animation-play-state: paused; }
+
+  /* ---------- Responsive (overrides; base styles stay inline) ---------- */
+  @media (max-width: 960px) {
+    [style*="grid-template-columns: 1.02fr 0.98fr"],
+    [style*="grid-template-columns: 0.82fr 1.18fr"],
+    [style*="grid-template-columns: 0.92fr 1.08fr"],
+    [style*="grid-template-columns: 0.96fr 1.04fr"],
+    [style*="grid-template-columns: 0.74fr 1.26fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 36px !important;
+    }
+    #mosaic-grid { grid-template-columns: repeat(4, 1fr) !important; grid-auto-rows: 150px !important; }
+    #mosaic-grid > div:nth-child(1),
+    #mosaic-grid > div:nth-child(8) { grid-column: auto !important; grid-row: auto !important; }
+    header nav { display: none !important; }
+  }
+  /* Keep the horizontal journey alive on tablet/preview widths; only stack on true mobile */
+  @media (max-width: 760px) {
+    [data-how] { height: auto !important; }
+    [data-how-sticky] { position: static !important; height: auto !important; overflow: visible !important; }
+    [data-how-track] { flex-direction: column !important; width: auto !important; height: auto !important; transform: none !important; }
+    [data-how-track] > div { width: 100% !important; flex: none !important; height: auto !important; padding: 54px 28px !important; }
+    [data-how-track] > div:last-child { min-height: 78vh !important; }
+    [data-how-sticky] > div:not([data-how-track]) { display: none !important; }
+    [data-how-connector] { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    section { padding-left: 20px !important; padding-right: 20px !important; }
+    #hero { padding-left: 0 !important; padding-right: 0 !important; }
+    #hero h1 { font-size: 38px !important; }
+    #mosaic-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    #mosaic-grid > div[style*="grid-column: 1 / 3"],
+    #mosaic-grid > div[style*="grid-column: 5 / 7"] { grid-column: auto !important; grid-row: auto !important; }
+    [data-trust-hex] { width: 122px !important; height: 140px !important; }
+    [style*="translateX(84px)"] { transform: translateX(66px) !important; margin-top: -36px !important; }
+    [data-comp-strip] { flex-direction: column !important; }
+    [data-comp-strip] > figure { margin-top: 0 !important; }
+    h1 { font-size: 40px !important; line-height: 1.06 !important; }
+    h2 { font-size: 30px !important; }
+    footer h2 { font-size: 32px !important; }
+    [data-hero-extra] { display: none !important; }
+  }
+
+  /* ---------- Phone hard-optimize (≤760 / ≤560 / ≤400) ---------- */
+  @media (max-width: 760px) {
+    /* Compact floating header */
+    header { top: 10px !important; padding: 0 12px !important; }
+    header > div { padding: 0 12px 0 16px !important; height: 58px !important; }
+    header > div > img { height: 24px !important; padding-left: 6px !important; }
+    /* Hero scale + clearance below the floating header */
+    #hero > div > div:last-child { padding: 90px 26px 48px !important; }
+    #hero h1 { font-size: 44px !important; }
+    /* Stack the 2-col "how" panels internally */
+    [data-how-track] > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 26px !important; }
+    [data-how-track] h2 { font-size: 30px !important; line-height: 1.1 !important; }
+    [data-how-track] h3 { font-size: 28px !important; line-height: 1.14 !important; }
+    [data-how-track] p { font-size: 16px !important; }
+    [data-how-track] img { max-height: 52vh !important; }
+    /* Companion documentary strip stacks earlier */
+    [data-comp-strip] { flex-direction: column !important; gap: 28px !important; }
+    [data-comp-strip] > figure { margin-top: 0 !important; }
+    /* Trim oversized inner-wrapper side padding */
+    [style*="padding: 0px 44px"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [style*="padding: 84px 0"] { padding-top: 54px !important; padding-bottom: 54px !important; }
+    [style*="padding: 72px 44px"] { padding-top: 52px !important; padding-bottom: 52px !important; }
+    /* Companion "why" card + footer CTA padding */
+    [style*="padding: 34px 36px"] { padding: 26px 22px !important; }
+    [style*="padding: 56px 44px"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [style*="padding: 56px 36px"] { padding: 44px 22px !important; }
+    footer [style*="border-radius: 40px"] { border-radius: 26px !important; min-height: 380px !important; }
+  }
+  @media (max-width: 560px) {
+    /* Hero breathing room + legible scrim on portrait */
+    #hero > div > div:last-child { padding: 96px 22px 48px !important; }
+    #hero [role="img"] { background-size: cover !important; }
+    #hero > div > div[style*="linear-gradient(90deg"] { background: linear-gradient(180deg, rgba(28,26,24,.5) 0%, rgba(28,26,24,.72) 100%) !important; }
+    #hero h1 { font-size: 34px !important; }
+    #hero p { font-size: 16px !important; }
+    /* Footer columns: two tidy rows */
+    footer [style*="justify-content: space-between"][style*="flex-wrap: wrap"] { gap: 32px 40px !important; }
+    /* Section heads dialed down */
+    [data-how-track] h2 { font-size: 27px !important; }
+    [data-how-track] h3 { font-size: 26px !important; }
+  }
+  @media (max-width: 400px) {
+    #hero h1 { font-size: 30px !important; }
+    h2 { font-size: 26px !important; }
+    /* Keep event tickets within the viewport */
+    [data-tilt][style*="width: 312px"] { width: 100% !important; max-width: 320px !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" data-screen-label="Hive · Landing (field journal)" style="position:relative; min-height:100vh; background: radial-gradient(1000px 620px at 88% -10%, rgba(201,106,61,.11), transparent 60%), radial-gradient(760px 520px at -6% 24%, rgba(107,142,95,.07), transparent 55%), var(--bg);">
+
+  <div data-grain="" style="position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.05; mix-blend-mode:multiply; background-image:url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22&gt;&lt;filter id=%22n%22&gt;&lt;feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/&gt;&lt;/filter&gt;&lt;rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/&gt;&lt;/svg&gt;');"></div>
+
+  <!-- ───────── Header ───────── -->
+  <header style="position:fixed; top:16px; left:0; right:0; z-index:90; display:flex; justify-content:center; padding:0 20px;">
+    <div style="width: 100%; max-width: 1140px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px 0 26px; height: 66px; background: rgba(255,255,255,.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 999px; border: 1.5px solid var(--surface); box-shadow: 0 6px 30px rgba(44,44,44,.08); padding-right: 37px">
+      
+      <img src="assets/logos/full_logo.svg" alt="Hive" style="height: 30px; padding-left: 19px"><nav style="display:flex; align-items:center; gap:32px;">
+        <a href="#proof" style="font-family:var(--font-body); font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">What we offer</a>
+        <a href="#how" style="font-family:var(--font-body); font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">How it works</a>
+        <a href="#week" style="font-family:var(--font-body); font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">This week</a>
+        <a href="#safety" style="font-family:var(--font-body); font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">Trust &amp; safety</a>
+        <a href="#faq" style="font-family:var(--font-body); font-size:14.5px; font-weight:500; color:var(--muted); text-decoration:none;">FAQ</a>
+      </nav><x-import component-from-global-scope="HiveDesignSystem_00dba1.Button" variant="primary" size="sm" hint-size="130px,36px">Join the Tribe</x-import>
+      
+    </div>
+  </header>
+
+  <!-- ───────── Hero (full-bleed cinematic) ───────── -->
+  <section id="hero" style="position:relative; z-index:2; padding:0;">
+    <div style="position:relative; overflow:hidden; min-height:100vh; display:flex; align-items:center;">
+      <div role="img" aria-label="People meeting and passing time at a street-side cafe" style="position:absolute; inset:0; background-image:url('assets/photography/hero_street_cafe.png'); background-repeat:no-repeat; background-position:center; background-size:104%; background-color:#1c1a18;"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(28,26,24,.88) 0%, rgba(28,26,24,.62) 34%, rgba(28,26,24,.22) 60%, rgba(28,26,24,0) 84%);"></div>
+      <div data-hero-glow="" aria-hidden="true" style="position:absolute; left:50%; top:50%; width:560px; height:560px; border-radius:50%; transform:translate(-50%,-50%); background:radial-gradient(closest-side, rgba(201,106,61,.55), rgba(201,106,61,0) 70%); mix-blend-mode:screen; filter:blur(14px); opacity:0; pointer-events:none; transition:opacity 450ms ease;"></div>
+      <div style="position:relative; width:100%; max-width:1140px; margin:0 auto; padding:54px 40px;">
+        <div style="max-width:540px;">
+          <span style="display:inline-block; font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#f0c9b4; margin-bottom:20px;">Human connection, in your terms</span>
+          <h1 style="font-family:var(--font-display); font-size:60px; font-weight:700; color:#fff; letter-spacing:-0.03em; line-height:1.04; margin:0;">Find people who <br>want to <span class="hl">be there<svg viewBox="0 0 300 16" preserveAspectRatio="none"><path d="M4 10 C70 3, 150 15, 210 7 S288 6, 296 11" stroke="var(--accent)" stroke-width="5" fill="none" stroke-linecap="round"></path></svg></span>.</h1>
+          <p style="font-family:var(--font-body); font-size:18px; color:rgba(255,255,255,.85); line-height:1.6; margin:24px 0 30px; max-width:440px; text-wrap:pretty;">Meet verified companions for activities, skills, experiences, and conversations that turn everyday moments into meaningful connections.</p>
+          <div style="display:flex; flex-direction:column; align-items:flex-start; gap:14px;">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Button" variant="primary" icon-right="arrow-right" hint-size="180px,52px">Start with a Hi</x-import>
+            <span style="font-family:var(--font-body); font-size:15px; font-style:italic; color:rgba(255,255,255,.72);">Book time. Not expectations.</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:13px; margin-top:30px;">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.AvatarGroup" avatars="{{ heroAvatars }}" max="{{ max4 }}" size="{{ n34 }}" hint-size="130px,34px"></x-import>
+            <span style="font-family:var(--font-body); font-size:14px; color:rgba(255,255,255,.85); max-width:250px; line-height:1.5;"><strong data-count-to="3200" data-count-suffix="+" style="color:#fff; font-weight:700;">3,200+</strong> afternoons booked near you this month.</span>
+          </div>
+          <div style="display:flex; align-items:baseline; gap:9px; margin-top:24px; font-family:var(--font-display); font-weight:700; color:#fff; font-size:20px; letter-spacing:-0.01em; line-height:1.2;">
+            <span>Meet</span>
+            <span data-rotate-clip="" style="position:relative; display:inline-block; height:1.2em; overflow:hidden; vertical-align:bottom;">
+              <span data-rotate-word="" style="display:inline-block; white-space:nowrap; color:var(--accent); will-change:transform, opacity;">a coffee companion</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── Social proof · more than plans ───────── -->
+  <section id="proof" data-reveal="" style="position:relative; z-index:2; max-width:1180px; margin:0 auto; padding:72px 44px 72px;">
+    <div style="position:absolute; z-index:-1; width:720px; height:520px; left:50%; top:120px; transform:translateX(-50%); background:radial-gradient(closest-side, rgba(201,106,61,.10), transparent 72%); pointer-events:none;"></div>
+
+    <div style="text-align:center; max-width:660px; margin:0 auto 46px;">
+      <span style="display:inline-block; font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:14px;">More than plans</span>
+      <h2 style="font-family:var(--font-display); font-size:42px; font-weight:700; color:var(--text); letter-spacing:-0.025em; line-height:1.1; margin:0 0 22px; text-wrap:balance;">A new way to find your Tribe</h2>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:20px;">
+        <span style="font-family:var(--font-display); font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Skills</span>
+        <span style="flex:0 0 auto; width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);"></span>
+        <span style="font-family:var(--font-display); font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Activities</span>
+        <span style="flex:0 0 auto; width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);"></span>
+        <span style="font-family:var(--font-display); font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Presence</span>
+        <span style="flex:0 0 auto; width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);"></span>
+        <span style="font-family:var(--font-display); font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Experiences</span>
+      </div>
+      <p style="font-family:var(--font-body); font-size:17px; color:var(--muted); line-height:1.64; margin:0 auto; max-width:540px; text-wrap:pretty;">
+        Whether you’re learning, exploring, creating, or simply spending time together, Hive helps you find people who want to be there.
+      </p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div data-mq style="overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);">
+        <div data-mq-track style="display:flex; gap:16px; width:max-content; animation:mq-left 60s linear infinite;"><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g01.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g02.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g03.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g04.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g05.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g06.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g07.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g08.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g09.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g01.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g02.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g03.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g04.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g05.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g06.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g07.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g08.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g09.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div></div>
+      </div>
+      <div data-mq style="overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);">
+        <div data-mq-track style="display:flex; gap:16px; width:max-content; animation:mq-right 66s linear infinite;"><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g10.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g11.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g12.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g13.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g14.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g15.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g16.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g17.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g10.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g11.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g12.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g13.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g14.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g15.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g16.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div><div style="flex:0 0 auto; width:248px; height:166px; border-radius:18px; overflow:hidden; box-shadow:var(--elevation-1);"><img src="assets/photography/g17.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" /></div></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ───────── How Hive works · horizontal journey ───────── -->
+  <section id="how" data-how="" style="position:relative; z-index:2; height:400vh; background:var(--bg);">
+    <div data-how-sticky="" style="position:sticky; top:0; height:100vh; overflow:hidden; background: radial-gradient(900px 560px at 18% 12%, rgba(201,106,61,.08), transparent 60%), var(--bg);">
+      <div data-how-track="" style="position:relative; display:flex; height:100%; width:max-content; will-change:transform;">
+
+        <!-- Panel 0 · intro -->
+        <div style="flex:0 0 100vw; min-width:0; width:100vw; box-sizing:border-box; height:100%; display:flex; align-items:center; padding:0 9vw;">
+          <div style="max-width:660px;">
+            <span style="display:inline-block; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:18px;">Simple by design</span>
+            <h2 style="font-family:var(--font-display); font-size:54px; font-weight:700; color:var(--text); letter-spacing:-0.03em; line-height:1.06; margin:0 0 24px; text-wrap:balance;">Finding the right company shouldn’t be complicated</h2>
+            <p style="font-family:var(--font-body); font-size:19px; color:var(--muted); line-height:1.62; margin:0; max-width:600px; text-wrap:pretty;">Whether you’re looking for someone to join you on a hike, learn a new skill, or simply share a conversation, Hive makes it easy to go from “I wish someone would join me” to “See you there.”</p>
+            <div style="display:inline-flex; align-items:center; gap:12px; margin-top:40px; font-family:var(--font-body); font-size:14px; font-weight:700; letter-spacing:.04em; color:var(--accent);">
+              <span style="width:46px; height:1.5px; background:var(--accent); display:inline-block;"></span>
+              Scroll to follow the journey
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 1 · step 1 -->
+        <div style="flex:0 0 100vw; min-width:0; width:100vw; box-sizing:border-box; height:100%; display:grid; grid-template-columns:0.82fr 1.18fr; gap:5vw; align-items:center; padding:0 8vw;">
+          <div>
+            <span style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">
+              <span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+              Step 01
+            </span>
+            <h3 style="font-family:var(--font-display); font-size:38px; font-weight:700; color:var(--text); letter-spacing:-0.025em; line-height:1.12; margin:0 0 18px; text-wrap:balance;">Find people who want the same thing.</h3>
+            <p style="font-family:var(--font-body); font-size:17.5px; color:var(--muted); line-height:1.62; margin:0; max-width:420px; text-wrap:pretty;">Browse verified companions nearby. See their interests, availability, and reviews before deciding who feels right.</p>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center; height:min(70vh, 620px); width:100%;">
+            <img src="assets/photography/discover_filters_mock.png" alt="Hive Discover screen showing verified companions nearby, with filters for availability, interests, and distance" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+          </div>
+        </div>
+
+        <!-- Panel 2 · step 2 -->
+        <div style="flex:0 0 100vw; min-width:0; width:100vw; box-sizing:border-box; height:100%; display:grid; grid-template-columns:0.82fr 1.18fr; gap:5vw; align-items:center; padding:0 8vw;">
+          <div>
+            <span style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">
+              <span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+              Step 02
+            </span>
+            <h3 style="font-family:var(--font-display); font-size:38px; font-weight:700; color:var(--text); letter-spacing:-0.025em; line-height:1.12; margin:0 0 18px; text-wrap:balance;">Pick a time that works for both of you.</h3>
+            <p style="font-family:var(--font-body); font-size:17.5px; color:var(--muted); line-height:1.62; margin:0; max-width:420px; text-wrap:pretty;">No endless back-and-forth. Choose a time, confirm the booking, and you’re all set.</p>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center; height:min(70vh, 620px); width:100%;">
+            <img src="assets/photography/booking_flow_mock.png" alt="Hive booking flow: choosing a time and confirming a coffee with Ananya" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+          </div>
+        </div>
+
+        <!-- Panel 3 · step 3 (full-bleed cinematic) -->
+        <div style="flex:0 0 100vw; min-width:0; width:100vw; height:100%; position:relative; display:flex; align-items:flex-end;">
+          <img src="assets/photography/sunrise_hike.png" alt="Friends out living the moment" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(28,26,24,.78) 0%, rgba(28,26,24,.42) 42%, rgba(28,26,24,.12) 72%, transparent 100%);"></div>
+          <div style="position:relative; z-index:8; padding:0 9vw 13vh; max-width:680px;">
+            <span style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#f0c9b4; margin-bottom:16px;">
+              <span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+              Step 03
+            </span>
+            <h3 style="font-family:var(--font-display); font-size:66px; font-weight:700; color:#fff; letter-spacing:-0.03em; line-height:1.0; margin:0 0 14px;">Meet. That’s it.</h3>
+            <p style="font-family:var(--font-display); font-size:22px; font-weight:600; color:#fff; margin:0 0 18px;">No expectations. Just shared time.</p>
+            <p style="font-family:var(--font-body); font-size:17px; color:rgba(255,255,255,.82); line-height:1.6; margin:0; max-width:540px; text-wrap:pretty;">Whether you’re walking, learning, cooking, exploring, or simply talking, Hive exists for what happens next.</p>
+          </div>
+        </div>
+
+        <!-- Continuous journey thread connecting the three steps -->
+        <div data-how-connector="" aria-hidden="true" style="position:absolute; inset:0; z-index:6; pointer-events:none;">
+          <svg viewBox="0 0 400 100" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%;">
+            <path d="M50,83 C 100,83 105,81 150,81 S 215,84.5 250,84.5 S 312,81 350,81 L 394,81" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.5 7" vector-effect="non-scaling-stroke" opacity="0.55"></path>
+          </svg>
+          <!-- origin -->
+          <div style="position:absolute; left:50vw; top:83%; transform:translate(-50%,-50%); width:13px; height:13px; border-radius:999px; background:var(--bg); border:2px solid var(--accent); box-shadow:0 4px 12px rgba(44,44,44,.18);"></div>
+          <!-- waypoint 1 -->
+          <div style="position:absolute; left:150vw; top:81%; transform:translate(-50%,-50%); width:38px; height:38px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(44,44,44,.26);"><span style="font-family:var(--font-display); font-size:15px; font-weight:700; color:#fff;">1</span></div>
+          <!-- waypoint 2 -->
+          <div style="position:absolute; left:250vw; top:84.5%; transform:translate(-50%,-50%); width:38px; height:38px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(44,44,44,.26);"><span style="font-family:var(--font-display); font-size:15px; font-weight:700; color:#fff;">2</span></div>
+          <!-- waypoint 3 -->
+          <div style="position:absolute; left:350vw; top:81%; transform:translate(-50%,-50%); width:38px; height:38px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(44,44,44,.32);"><span style="font-family:var(--font-display); font-size:15px; font-weight:700; color:#fff;">3</span></div>
+        </div>
+
+      </div>
+
+      <!-- progress -->
+      <div style="position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(44,44,44,.07);">
+        <div data-how-fill="" style="height:100%; width:0%; background:var(--accent); transition:width 120ms linear;"></div>
+      </div>
+      <div style="position:absolute; left:50%; bottom:26px; transform:translateX(-50%); display:flex; gap:8px; align-items:center; background:rgba(255,255,255,.72); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:999px; padding:9px 16px; box-shadow:0 6px 24px rgba(44,44,44,.12);">
+        <span data-how-dot="" style="font-family:var(--font-body); font-size:12.5px; font-weight:700; color:var(--muted-2); transition:color 250ms;">01 Browse</span>
+        <span style="color:var(--border-2);">·</span>
+        <span data-how-dot="" style="font-family:var(--font-body); font-size:12.5px; font-weight:700; color:var(--muted-2); transition:color 250ms;">02 Book</span>
+        <span style="color:var(--border-2);">·</span>
+        <span data-how-dot="" style="font-family:var(--font-body); font-size:12.5px; font-weight:700; color:var(--muted-2); transition:color 250ms;">03 Meet</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── This week near you (scrapbook tickets) ───────── -->
+  <section id="week" style="position:relative; z-index:2; max-width:1160px; margin:0 auto; padding:72px 44px 72px;">
+    <div data-reveal="" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:38px; flex-wrap:wrap; gap:12px;">
+      <div>
+        <span class="hive-eyebrow">This week near you</span>
+        <h2 style="font-family:var(--font-display); font-size:34px; font-weight:700; color:var(--text); letter-spacing:-0.02em; margin:12px 0 0;">A few afternoons worth showing up for</h2>
+      </div>
+      <a href="#" style="font-family:var(--font-body); font-size:15px; font-weight:700; color:var(--accent); text-decoration:none;">See everything on →</a>
+    </div>
+
+    <div data-reveal="" style="display:flex; justify-content:center; align-items:flex-start; gap:30px; flex-wrap:wrap;">
+      <!-- ticket 1 -->
+      <div data-tilt="-2.5" style="width:312px; background:#fff; border-radius:8px; box-shadow:0 16px 40px rgba(44,44,44,.13); transform:rotate(-2.5deg); overflow:hidden; transition:transform 320ms cubic-bezier(.34,1.56,.64,1), box-shadow 320ms ease;" style-hover="transform:rotate(0deg) translateY(-9px); box-shadow:0 28px 62px rgba(44,44,44,.22);">
+        <div style="position:relative; height:188px; background:var(--surface);">
+          <img src="assets/photography/coffee_convo.png" alt="" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; top:12px; left:12px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Badge" tone="warning" hint-size="86px,22px">2 seats left</x-import></div>
+        </div>
+        <div style="padding:18px 18px 20px;">
+          <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:6px;">Sat · 10:00am</div>
+          <h3 style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text); margin:0 0 4px;">Slow coffee, nothing to prove</h3>
+          <p style="font-family:var(--font-body); font-size:14px; color:var(--muted); margin:0 0 16px;">A quiet neighbourhood roastery</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px dashed var(--border-2);">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Avatar" name="Nadia K" size="{{ n30 }}" hint-size="30px,30px"></x-import>
+            <span style="font-family:var(--font-body); font-size:13.5px; color:var(--muted);">Nadia’s table always runs long. That’s the point.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ticket 2 (raised) -->
+      <div data-tilt="1.5" style="width:312px; margin-top:30px; background:#fff; border-radius:8px; box-shadow:0 18px 44px rgba(44,44,44,.15); transform:rotate(1.5deg); overflow:hidden; transition:transform 320ms cubic-bezier(.34,1.56,.64,1), box-shadow 320ms ease;" style-hover="transform:rotate(0deg) translateY(-9px); box-shadow:0 30px 66px rgba(44,44,44,.24);">
+        <div style="position:relative; height:188px; background:var(--surface);">
+          <img src="assets/photography/morning_jog.png" alt="" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; top:12px; left:12px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Badge" tone="success" hint-size="120px,22px">Beginners welcome</x-import></div>
+        </div>
+        <div style="padding:18px 18px 20px;">
+          <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:6px;">Sun · 6:30am</div>
+          <h3 style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text); margin:0 0 4px;">The easy morning loop</h3>
+          <p style="font-family:var(--font-body); font-size:14px; color:var(--muted); margin:0 0 16px;">The city park · main gate</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px dashed var(--border-2);">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Avatar" name="Rohan M" size="{{ n30 }}" hint-size="30px,30px"></x-import>
+            <span style="font-family:var(--font-body); font-size:13.5px; color:var(--muted);">Rohan’s pace: talkable, never breathless.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ticket 3 -->
+      <div data-tilt="-1" style="width:312px; background:#fff; border-radius:8px; box-shadow:0 16px 40px rgba(44,44,44,.13); transform:rotate(-1deg); overflow:hidden; transition:transform 320ms cubic-bezier(.34,1.56,.64,1), box-shadow 320ms ease;" style-hover="transform:rotate(0deg) translateY(-9px); box-shadow:0 28px 62px rgba(44,44,44,.22);">
+        <div style="position:relative; height:188px; background:var(--surface);">
+          <img src="assets/photography/two_girls_play_badminton.png" alt="" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; top:12px; left:12px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Badge" tone="accent" hint-size="56px,22px">New</x-import></div>
+        </div>
+        <div style="padding:18px 18px 20px;">
+          <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:6px;">Thu · 7:00pm</div>
+          <h3 style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text); margin:0 0 4px;">After-work badminton</h3>
+          <p style="font-family:var(--font-body); font-size:14px; color:var(--muted); margin:0 0 16px;">Indoor courts nearby</p>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px dashed var(--border-2);">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Avatar" name="Mei L" size="{{ n30 }}" hint-size="30px,30px"></x-import>
+            <span style="font-family:var(--font-body); font-size:13.5px; color:var(--muted);">Mei’s got spare racquets. Just bring shoes.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── Trust · the honeycomb ───────── -->
+  <section id="safety" data-reveal="" style="position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:72px 44px 72px;">
+
+    <div style="text-align:center; max-width:640px; margin:0 auto 54px;">
+      <span style="display:inline-block; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:14px;">Designed for peace of mind</span>
+      <h2 style="font-family:var(--font-display); font-size:42px; font-weight:700; color:var(--text); letter-spacing:-0.025em; line-height:1.1; margin:0 0 22px; text-wrap:balance;">Trust begins before you meet.</h2>
+      <p style="font-family:var(--font-body); font-size:17px; color:var(--muted); line-height:1.64; margin:0 auto; max-width:560px; text-wrap:pretty;">Meaningful connections are built on trust. That’s why every interaction on Hive is designed with safety, transparency, and respect at its core, so you can focus on the experience, not the uncertainty.</p>
+    </div>
+
+    <div data-stagger="" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px;">
+      <div style="background:var(--panel); border-radius:20px; padding:28px 24px; box-shadow:var(--elevation-1); transition:transform 250ms cubic-bezier(.4,0,.2,1), box-shadow 250ms ease;" style-hover="transform:translateY(-4px); box-shadow:var(--elevation-2);">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="shield" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></div>
+        <h3 style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text); letter-spacing:-0.01em; margin:0 0 8px;">Verified people</h3>
+        <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.6; margin:0;">Every companion completes identity verification before they can accept bookings.</p>
+      </div>
+      <div style="background:var(--panel); border-radius:20px; padding:28px 24px; box-shadow:var(--elevation-1); transition:transform 250ms cubic-bezier(.4,0,.2,1), box-shadow 250ms ease;" style-hover="transform:translateY(-4px); box-shadow:var(--elevation-2);">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="eye" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></div>
+        <h3 style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text); letter-spacing:-0.01em; margin:0 0 8px;">Transparent profiles</h3>
+        <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.6; margin:0;">See interests, experience, availability, and reviews before you decide to spend time together.</p>
+      </div>
+      <div style="background:var(--panel); border-radius:20px; padding:28px 24px; box-shadow:var(--elevation-1); transition:transform 250ms cubic-bezier(.4,0,.2,1), box-shadow 250ms ease;" style-hover="transform:translateY(-4px); box-shadow:var(--elevation-2);">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="sliders" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></div>
+        <h3 style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text); letter-spacing:-0.01em; margin:0 0 8px;">You’re in control</h3>
+        <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.6; margin:0;">Choose who you meet, when, and what you do. Every booking begins with a mutual yes.</p>
+      </div>
+      <div style="background:var(--panel); border-radius:20px; padding:28px 24px; box-shadow:var(--elevation-1); transition:transform 250ms cubic-bezier(.4,0,.2,1), box-shadow 250ms ease;" style-hover="transform:translateY(-4px); box-shadow:var(--elevation-2);">
+        <div style="width:48px; height:48px; border-radius:14px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="message-circle" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></div>
+        <h3 style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text); letter-spacing:-0.01em; margin:0 0 8px;">Support when you need it</h3>
+        <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.6; margin:0;">From reporting concerns to dedicated help, real people are here at every step.</p>
+      </div>
+    </div>
+
+    <!-- closing + trust indicators -->
+    <div style="text-align:center; margin:64px auto 0; max-width:1040px;">
+      <p style="font-family:var(--font-display); font-size:33px; font-weight:700; color:var(--text); letter-spacing:-0.02em; line-height:1.22; margin:0 0 30px; text-wrap:balance;">Safe enough to trust. <span style="color:var(--accent);">Human enough to enjoy.</span></p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-body); font-size:12px; font-weight:600; color:var(--muted); background:var(--panel); border:1px solid var(--border); border-radius:999px; padding:6px 11px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="check" size="{{ icon14 }}" color="var(--success)" hint-size="14px,14px"></x-import>Identity verified companions</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-body); font-size:12px; font-weight:600; color:var(--muted); background:var(--panel); border:1px solid var(--border); border-radius:999px; padding:6px 11px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="check" size="{{ icon14 }}" color="var(--success)" hint-size="14px,14px"></x-import>Secure payments</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-body); font-size:12px; font-weight:600; color:var(--muted); background:var(--panel); border:1px solid var(--border); border-radius:999px; padding:6px 11px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="check" size="{{ icon14 }}" color="var(--success)" hint-size="14px,14px"></x-import>Report &amp; support tools</span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:var(--font-body); font-size:12px; font-weight:600; color:var(--muted); background:var(--panel); border:1px solid var(--border); border-radius:999px; padding:6px 11px;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="check" size="{{ icon14 }}" color="var(--success)" hint-size="14px,14px"></x-import>Mutual booking confirmation</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ───────── Become a Companion ───────── -->
+  <section id="companion" data-reveal="" style="position:relative; z-index:2; background:var(--surface); padding:84px 0 84px; margin-top:0;">
+    <div style="max-width:1140px; margin:0 auto; padding:0 44px;">
+
+      <div style="display:grid; grid-template-columns:0.96fr 1.04fr; gap:60px; align-items:start;">
+        <!-- left: pitch -->
+        <div>
+          <span style="display:inline-block; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">For companions</span>
+          <h2 style="font-family:var(--font-display); font-size:46px; font-weight:700; color:var(--text); letter-spacing:-0.03em; line-height:1.04; margin:0 0 16px;">Become a Companion</h2>
+          <p style="font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--text); line-height:1.32; margin:0 0 20px; letter-spacing:-0.01em;">Share what you enjoy. Meet people who value it.</p>
+          <p style="font-family:var(--font-body); font-size:16.5px; color:var(--muted); line-height:1.66; margin:0 0 16px; max-width:480px; text-wrap:pretty;">Whether it’s a weekend hike, a coffee conversation, teaching guitar, exploring your city, or simply being there for someone, your time can create meaningful experiences for others.</p>
+          <p style="font-family:var(--font-body); font-size:16.5px; color:var(--muted); line-height:1.66; margin:0 0 22px; max-width:480px; text-wrap:pretty;">Set your availability, choose what you’d like to offer, and decide who you’d like to spend time with.</p>
+          <div style="display:inline-flex; align-items:center; gap:10px; font-family:var(--font-display); font-size:17px; font-weight:600; color:var(--text);">
+            <span style="width:11px; height:12px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+            You stay in control, every step of the way.
+          </div>
+        </div>
+
+        <!-- right: why + cta -->
+        <div style="background:var(--panel); border-radius:24px; padding:34px 36px; box-shadow:var(--elevation-1);">
+          <h3 style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--text); letter-spacing:-0.01em; margin:0 0 22px;">Why become a Companion?</h3>
+          <div style="display:flex; flex-direction:column; gap:22px;">
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span style="flex:0 0 auto; width:40px; height:40px; border-radius:12px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="heart" size="{{ icon18 }}" color="var(--accent)" hint-size="18px,18px"></x-import></span>
+              <div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text); margin-bottom:3px;">Share what you love</div>
+                <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.55; margin:0;">Turn your hobbies, interests, and everyday moments into meaningful experiences.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span style="flex:0 0 auto; width:40px; height:40px; border-radius:12px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="smile" size="{{ icon18 }}" color="var(--accent)" hint-size="18px,18px"></x-import></span>
+              <div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text); margin-bottom:3px;">Meet like-minded people</div>
+                <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.55; margin:0;">Connect with people who genuinely want to learn, explore, or simply spend time together.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span style="flex:0 0 auto; width:40px; height:40px; border-radius:12px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="check-circle" size="{{ icon18 }}" color="var(--accent)" hint-size="18px,18px"></x-import></span>
+              <div>
+                <div style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text); margin-bottom:3px;">Earn on your terms</div>
+                <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.55; margin:0;">Set your availability, accept the requests you want, and get paid securely after every completed booking.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:28px;">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Button" variant="primary" icon-right="arrow-right" hint-size="220px,52px">Become a Companion</x-import>
+          </div>
+        </div>
+      </div>
+
+      <!-- documentary strip -->
+      <div data-comp-strip="" data-stagger="" style="display:flex; gap:24px; align-items:flex-start; margin-top:56px;">
+        <figure style="margin:0; flex:1; min-width:0; margin-top:28px;">
+          <div style="border-radius:20px; overflow:hidden; box-shadow:0 22px 46px rgba(44,44,44,.18); aspect-ratio:4/3; background:var(--panel);">
+            <img src="assets/photography/companion_art.png" alt="Two artists painting in a studio" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <figcaption style="padding:16px 2px 0;">
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span><span style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text);">Share your art.</span></div>
+            <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.5; margin:6px 0 0;">Every masterpiece begins with a single brushstroke.</p>
+          </figcaption>
+        </figure>
+        <figure style="margin:0; flex:1; min-width:0;">
+          <div style="border-radius:20px; overflow:hidden; box-shadow:0 22px 46px rgba(44,44,44,.18); aspect-ratio:4/3; background:var(--panel);">
+            <img src="assets/photography/companion_pickleball.png" alt="Two friends playing pickleball" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <figcaption style="padding:16px 2px 0;">
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span><span style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text);">Play pickleball.</span></div>
+            <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.5; margin:6px 0 0;">Every rally starts a conversation.</p>
+          </figcaption>
+        </figure>
+        <figure style="margin:0; flex:1; min-width:0; margin-top:28px;">
+          <div style="border-radius:20px; overflow:hidden; box-shadow:0 22px 46px rgba(44,44,44,.18); aspect-ratio:4/3; background:var(--panel);">
+            <img src="assets/photography/companion_coffee.png" alt="Two people in a warm coffee conversation" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <figcaption style="padding:16px 2px 0;">
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:9px; height:10px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span><span style="font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--text);">Host coffee conversations.</span></div>
+            <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.5; margin:6px 0 0;">Sometimes people just need company.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────── Testimonial ───────── -->
+  <section id="story" data-reveal="" style="position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:72px 44px 72px; display:grid; grid-template-columns:0.92fr 1.08fr; gap:48px; align-items:center;">
+    <div data-tilt="-2" style="background:#fff; padding:14px 14px 0; border-radius:4px; box-shadow:0 18px 46px rgba(44,44,44,.16); transform:rotate(-2deg);">
+      <div style="width:100%; aspect-ratio:5/4; overflow:hidden; border-radius:3px; background:var(--surface);"><img src="assets/photography/uncle_dog_walk.png" alt="Two friends on a morning walk" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div style="font-family:var(--font-body); font-size:13px; color:var(--muted); padding:12px 4px 14px;">sunday walk crew · city park</div>
+    </div>
+    <div>
+      <span class="hive-eyebrow">One real Sunday</span>
+      <p style="font-family:var(--font-display); font-size:27px; font-weight:600; color:var(--text); line-height:1.34; letter-spacing:-0.01em; margin:16px 0 0; text-wrap:pretty;">
+        “I moved here for a job in November and knew exactly nobody. Now there’s a Sunday walking crew that texts me if I don’t show up, even when it’s pouring.”
+      </p>
+      <div style="display:flex; align-items:center; gap:12px; margin-top:24px;">
+        <x-import component-from-global-scope="HiveDesignSystem_00dba1.Avatar" name="Aditya R" size="{{ n42 }}" hint-size="42px,42px"></x-import>
+        <div>
+          <div style="font-family:var(--font-body); font-size:15px; font-weight:700; color:var(--text);">Aditya R.</div>
+          <div style="font-family:var(--font-body); font-size:13px; color:var(--muted-2);">Joined Hive in March</div>
+        </div>
+      </div>
+      <div style="font-family:var(--font-body); font-size:13.5px; color:var(--muted); margin-top:16px; font-style:italic;">p.s. the dog’s name is Biscuit, and yes, he counts as a member.</div>
+    </div>
+  </section>
+
+  <!-- ───────── FAQ ───────── -->
+  <section id="faq" data-reveal="" style="position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:72px 44px 72px;">
+    <div style="display:grid; grid-template-columns:0.74fr 1.26fr; gap:56px; align-items:start;">
+
+      <!-- left rail -->
+      <div style="position:sticky; top:96px;">
+        <span style="display:inline-block; font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:14px;">FAQ</span>
+        <h2 style="font-family:var(--font-display); font-size:38px; font-weight:700; color:var(--text); letter-spacing:-0.025em; line-height:1.08; margin:0 0 28px; text-wrap:balance;">Frequently asked questions</h2>
+        <div style="background:var(--panel); border-radius:20px; padding:24px 26px; box-shadow:var(--elevation-1);">
+          <div style="font-family:var(--font-display); font-size:19px; font-weight:700; color:var(--text); margin-bottom:5px;">Still curious?</div>
+          <p style="font-family:var(--font-body); font-size:14.5px; color:var(--muted); line-height:1.55; margin:0 0 18px;">We’re happy to help.</p>
+          <a href="mailto:gethive.app01@gmail.com" style="text-decoration:none; display:inline-block;"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Button" variant="secondary" icon-right="arrow-right" hint-size="150px,46px">Contact us</x-import></a>
+        </div>
+      </div>
+
+      <!-- accordion -->
+      <div style="border-top:1px solid var(--border);">
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Is Hive a dating app?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">No. Hive is a companionship platform built around shared activities, skills, experiences, and conversations. Whether you’re looking for a hiking partner, someone to practise guitar with, or simply a coffee companion, every interaction begins with a shared intention, not romantic expectations.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Who can become a Companion?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Anyone with a genuine interest in sharing their time, skills, or hobbies can apply. Every Companion goes through a verification process before accepting bookings on Hive.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">How do I choose the right Companion?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Every profile includes interests, experience, availability, ratings, and reviews to help you make an informed choice. You decide who you’d like to spend time with.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Is it safe to meet someone through Hive?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Safety is built into every step. Verified profiles, transparent information, secure payments, community guidelines, and reporting tools help create a trusted experience for everyone.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">What kinds of activities can I book?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Hive is designed for everyday human connection. From morning walks, hiking, yoga, and pickleball to painting, language practice, coffee conversations, reading sessions, cooking together, and exploring your city, there’s something for every interest.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Can I offer more than one activity or skill?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Absolutely. Many Companions enjoy sharing multiple interests. You can create offerings across activities, skills, experiences, and presence-based sessions.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">How do payments work?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Payments are made securely through Hive. Once a session is successfully completed, the Companion receives their payout according to the platform’s payout process.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">What if I need to cancel?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Plans can change. Hive provides a clear cancellation policy so both Members and Companions know what to expect before confirming a booking.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">Do I have to talk the whole time?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Not at all. Some connections are built through conversation, while others happen in comfortable silence. Whether you’re reading together, walking, or simply sharing a coffee, every experience is guided by mutual comfort and respect.</p>
+          </div>
+        </div>
+
+        <div data-faq-item="" style="border-bottom:1px solid var(--border);">
+          <button data-faq-q="" style="display:flex; width:100%; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; background:none; border:none; cursor:pointer; text-align:left;">
+            <span style="font-family:var(--font-display); font-size:18.5px; font-weight:700; color:var(--text); letter-spacing:-0.01em;">What makes Hive different?</span>
+            <span data-faq-icon="" style="flex:0 0 auto; display:flex; align-items:center; justify-content:center; transition:transform 320ms cubic-bezier(.4,0,.2,1);"><x-import component-from-global-scope="HiveDesignSystem_00dba1.Icon" name="chevron-down" size="{{ icon20 }}" color="var(--accent)" hint-size="20px,20px"></x-import></span>
+          </button>
+          <div data-faq-a="" style="overflow:hidden; max-height:0; transition:max-height 360ms cubic-bezier(.4,0,.2,1);">
+            <p style="font-family:var(--font-body); font-size:15.5px; color:var(--muted); line-height:1.66; margin:0; padding:0 40px 24px 0; max-width:680px; text-wrap:pretty;">Most platforms help you find people online. Hive helps you spend meaningful time together in the real world, through shared interests, shared experiences, and genuine human connection.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── Final CTA + footer ───────── -->
+  <footer style="position:relative; z-index:2; background:transparent;">
+    <section data-reveal="" style="max-width:1180px; margin:0 auto; padding:10px 24px 0;">
+      <div style="position:relative; border-radius:40px; overflow:hidden; min-height:460px; display:flex; align-items:center; justify-content:center; text-align:center; box-shadow:0 34px 80px rgba(44,44,44,.24);">
+        <img src="assets/photography/cta_friends_coffee.png" alt="Friends sharing coffee together at home" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 18%;">
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,26,24,.52) 0%, rgba(28,26,24,.5) 45%, rgba(28,26,24,.76) 100%);"></div>
+        <div style="position:relative; max-width:720px; padding:56px 36px;">
+          <h2 style="font-family:var(--font-display); font-size:50px; font-weight:700; color:#fff; letter-spacing:-0.03em; line-height:1.06; margin:0 0 16px; text-wrap:balance;">Life is better when it’s shared.</h2>
+          <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:7px 11px; margin-bottom:20px;">
+            <span style="font-family:var(--font-body); font-size:14px; color:rgba(255,255,255,.9); white-space:nowrap;">A coffee conversation</span>
+            <span style="width:7px; height:8px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+            <span style="font-family:var(--font-body); font-size:14px; color:rgba(255,255,255,.9); white-space:nowrap;">A weekend hike</span>
+            <span style="width:7px; height:8px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+            <span style="font-family:var(--font-body); font-size:14px; color:rgba(255,255,255,.9); white-space:nowrap;">A morning walk</span>
+            <span style="width:7px; height:8px; background:var(--accent); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display:inline-block;"></span>
+            <span style="font-family:var(--font-body); font-size:14px; color:rgba(255,255,255,.9); white-space:nowrap;">Or a simple good company</span>
+          </div>
+          <p style="font-family:var(--font-body); font-size:17.5px; color:rgba(255,255,255,.85); line-height:1.55; margin:0 auto 28px; max-width:470px; text-wrap:pretty;">Some of life’s best moments begin when someone simply says, “I’m in.”</p>
+          <div style="display:flex; justify-content:center;">
+            <x-import component-from-global-scope="HiveDesignSystem_00dba1.Button" variant="secondary" icon-right="arrow-right" hint-size="180px,52px">Start with a Hi</x-import>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="max-width:1140px; margin:0 auto; padding:56px 44px 48px;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:48px 56px;">
+        <!-- brand -->
+        <div style="max-width:300px;">
+          <img src="assets/logos/full_logo.svg" alt="Hive" style="height:28px;">
+          <p style="font-family:var(--font-body); font-size:14px; color:var(--muted); line-height:1.6; margin:16px 0 18px; max-width:260px;">Find people nearby who share what you love, and book real time together.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="#" style="display:inline-flex; align-items:center; gap:8px; background:var(--hive-charcoal); color:#fff; border-radius:999px; padding:10px 17px; font-family:var(--font-body); font-size:13px; font-weight:600; text-decoration:none;">Download for iOS</a>
+            <a href="#" style="display:inline-flex; align-items:center; gap:8px; background:var(--hive-charcoal); color:#fff; border-radius:999px; padding:10px 17px; font-family:var(--font-body); font-size:13px; font-weight:600; text-decoration:none;">Get it on Android</a>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:18px;">
+            <a href="https://x.com/hiveapp01" target="_blank" rel="noopener" aria-label="Hive on X" style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:999px; background:var(--panel); box-shadow:var(--elevation-1); color:var(--text); text-decoration:none; transition:color 150ms, transform 150ms;" style-hover="color:var(--accent); transform:translateY(-2px);">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/hive._app/" target="_blank" rel="noopener" aria-label="Hive on Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:999px; background:var(--panel); box-shadow:var(--elevation-1); color:var(--text); text-decoration:none; transition:color 150ms, transform 150ms;" style-hover="color:var(--accent); transform:translateY(-2px);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/gethive-app/" target="_blank" rel="noopener" aria-label="Hive on LinkedIn" style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:999px; background:var(--panel); box-shadow:var(--elevation-1); color:var(--text); text-decoration:none; transition:color 150ms, transform 150ms;" style-hover="color:var(--accent); transform:translateY(-2px);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <!-- explore -->
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <div style="font-family:var(--font-body); font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); margin-bottom:5px;">Explore</div>
+          <a href="#proof" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">What we offer</a>
+          <a href="#how" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">How it works</a>
+          <a href="#week" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">This week</a>
+          <a href="#companion" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">Become a Companion</a>
+        </div>
+        <!-- company -->
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <div style="font-family:var(--font-body); font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); margin-bottom:5px;">Company</div>
+          <a href="About.html" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">About</a>
+          <a href="#faq" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">FAQs</a>
+        </div>
+        <!-- support -->
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <div style="font-family:var(--font-body); font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); margin-bottom:5px;">Support</div>
+          <a href="#safety" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">Trust &amp; safety</a>
+          <a href="mailto:gethive.app01@gmail.com" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">Contact us</a>
+          <a href="CommunityGuidelines.html" style="font-family:var(--font-body); font-size:14px; color:var(--muted); text-decoration:none;">Community guidelines</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--border); margin-top:44px; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
+        <span style="font-family:var(--font-body); font-size:13px; color:var(--muted-2);">© 2026 Hive · Book time, not expectations</span>
+        <div style="display:flex; gap:22px;">
+          <a href="Privacy.html" style="font-family:var(--font-body); font-size:13px; color:var(--muted); text-decoration:none;">Privacy</a>
+          <a href="Terms.html" style="font-family:var(--font-body); font-size:13px; color:var(--muted); text-decoration:none;">Terms</a>
+          <a href="Refund.html" style="font-family:var(--font-body); font-size:13px; color:var(--muted); text-decoration:none;">Refund policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tiltObjects&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;paperTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;revealAnimations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;mosaicCycle&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      yes: true,
+      heroAvatars: [{ name: 'Mira' }, { name: 'Rohan' }, { name: 'Lena' }, { name: 'Sam' }, { name: 'Ada' }],
+      n42: 42,
+      n34: 34,
+      n30: 30,
+      n15: 15,
+      max4: 4,
+      icon14: 14,
+      icon16: 16,
+      icon18: 18,
+      icon12: 12,
+      icon10: 10,
+      icon30: 30,
+      icon20: 20,
+      rootRef: (el) => { if (el) this._root = el; },
+    };
+  }
+
+  componentDidMount() {
+    const root = this._root || document;
+
+    // Paper texture toggle
+    if (this.props.paperTexture === false) {
+      const g = root.querySelector('[data-grain]');
+      if (g) g.remove();
+    }
+
+    // Tilt toggle — straighten all scrapbook objects when off
+    if (this.props.tiltObjects === false) {
+      Array.prototype.slice.call(root.querySelectorAll('[data-tilt]')).forEach((el) => {
+        el.style.transform = 'none';
+      });
+    }
+
+    // Mosaic — periodically cross-fade tiles to fresh photos
+    this._startMosaic(root);
+
+    // How — horizontal scroll-driven journey
+    this._startHowScroll(root);
+
+    // Trust — interactive honeycomb selector
+    this._startTrust(root);
+
+    // Hero — rotating "Meet a …" companion
+    this._startHeroRotator(root);
+
+    // Ambient motion — entrance choreography, drawn underline, count-up, stagger, parallax
+    this._startMotion(root);
+
+    // FAQ — accordion
+    this._startFaq(root);
+
+    // Booking calendar — interactive
+    this._startCalendar(root);
+
+    // Scroll reveal
+    if (this.props.revealAnimations === false) return;
+    const els = Array.prototype.slice.call(root.querySelectorAll('[data-reveal]'));
+    if (!els.length) return;
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity 700ms cubic-bezier(.4,0,.2,1), transform 700ms cubic-bezier(.4,0,.2,1)';
+      el.style.willChange = 'opacity, transform';
+    });
+    const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; };
+    if (!('IntersectionObserver' in window)) { els.forEach(reveal); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
+    els.forEach((el) => io.observe(el));
+    setTimeout(() => { els.forEach(reveal); }, 1900);
+  }
+
+  componentWillUnmount() {
+    if (this._mosaicTimer) clearTimeout(this._mosaicTimer);
+    if (this._rotTimer) clearInterval(this._rotTimer);
+    if (this._howScroll) {
+      window.removeEventListener('scroll', this._howScroll);
+      window.removeEventListener('resize', this._howScroll);
+    }
+    if (this._motionScroll) window.removeEventListener('scroll', this._motionScroll);
+    if (this._headerScroll) window.removeEventListener('scroll', this._headerScroll);
+    if (this._heroBox) {
+      if (this._glowMove) this._heroBox.removeEventListener('pointermove', this._glowMove);
+      if (this._glowLeave) this._heroBox.removeEventListener('pointerleave', this._glowLeave);
+    }
+  }
+
+  _startMotion(root) {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const RAF2 = (fn) => requestAnimationFrame(() => requestAnimationFrame(fn));
+
+    // --- Hero entrance choreography: gentle staggered rise ---
+    const heroCol = root.querySelector('#hero [style*="max-width: 540px"]');
+    if (heroCol && !reduce) {
+      const kids = Array.prototype.slice.call(heroCol.children);
+      kids.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 760ms cubic-bezier(.22,.61,.36,1), transform 760ms cubic-bezier(.22,.61,.36,1)';
+        el.style.transitionDelay = (120 + i * 110) + 'ms';
+        el.style.willChange = 'opacity, transform';
+      });
+      RAF2(() => kids.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; }));
+      setTimeout(() => kids.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; el.style.willChange = ''; el.style.transitionDelay = ''; el.style.transition = ''; }), 1900);
+    }
+
+    // --- Self-drawing underline beneath "be there" ---
+    const path = root.querySelector('.hl > svg path');
+    if (path) {
+      try {
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = len;
+        if (reduce) {
+          path.style.strokeDashoffset = '0';
+        } else {
+          path.style.strokeDashoffset = len;
+          void path.getBoundingClientRect();
+          path.style.transition = 'stroke-dashoffset 1000ms cubic-bezier(.4,0,.2,1)';
+          path.style.transitionDelay = '720ms';
+          RAF2(() => { path.style.strokeDashoffset = '0'; });
+        }
+      } catch (e) {}
+    }
+
+    // --- Count-up stats when they scroll into view ---
+    const counters = Array.prototype.slice.call(root.querySelectorAll('[data-count-to]'));
+    const runCount = (el) => {
+      const to = parseFloat(el.getAttribute('data-count-to')) || 0;
+      const suffix = el.getAttribute('data-count-suffix') || '';
+      if (reduce) { el.textContent = to.toLocaleString() + suffix; return; }
+      const dur = 1500, start = performance.now();
+      const ease = (t) => 1 - Math.pow(1 - t, 3);
+      const step = (now) => {
+        const t = Math.min(1, (now - start) / dur);
+        el.textContent = Math.round(to * ease(t)).toLocaleString() + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    if (counters.length) {
+      if (!('IntersectionObserver' in window)) { counters.forEach(runCount); }
+      else {
+        const co = new IntersectionObserver((ents) => {
+          ents.forEach((e) => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+        }, { threshold: 0.6 });
+        counters.forEach((el) => co.observe(el));
+      }
+    }
+
+    // --- Staggered child reveal for card groups ---
+    const groups = Array.prototype.slice.call(root.querySelectorAll('[data-stagger]'));
+    groups.forEach((group) => {
+      if (reduce) return;
+      const kids = Array.prototype.slice.call(group.children);
+      kids.forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity 660ms cubic-bezier(.22,.61,.36,1), transform 660ms cubic-bezier(.22,.61,.36,1)';
+        el.style.willChange = 'opacity, transform';
+      });
+      const reveal = () => kids.forEach((el, i) => {
+        el.style.transitionDelay = (i * 95) + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      if (!('IntersectionObserver' in window)) { reveal(); return; }
+      const go = new IntersectionObserver((ents) => {
+        ents.forEach((e) => { if (e.isIntersecting) { reveal(); go.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      go.observe(group);
+      setTimeout(reveal, 2400);
+    });
+
+    // --- Subtle hero parallax on the photograph ---
+    const heroImg = root.querySelector('#hero [role="img"]');
+    if (heroImg && !reduce) {
+      heroImg.style.willChange = 'transform';
+      let ticking = false;
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const y = window.scrollY || window.pageYOffset || 0;
+          if (y < window.innerHeight * 1.1) {
+            const ty = Math.min(22, y * 0.05);
+            heroImg.style.transform = 'translate3d(0,' + ty + 'px,0)';
+          }
+          ticking = false;
+        });
+      };
+      heroImg.style.transform = 'none';
+      window.addEventListener('scroll', onScroll, { passive: true });
+      this._motionScroll = onScroll;
+    }
+
+    // --- Section headings wipe up into view ---
+    const heads = Array.prototype.slice.call(root.querySelectorAll('h2'))
+      .filter((h) => !h.closest('[data-how-track]'));
+    if (!reduce && heads.length) {
+      heads.forEach((h) => {
+        h.style.clipPath = 'inset(0 0 105% 0)';
+        h.style.transform = 'translateY(16px)';
+        h.style.transition = 'clip-path 860ms cubic-bezier(.22,.61,.36,1), transform 860ms cubic-bezier(.22,.61,.36,1)';
+        h.style.willChange = 'clip-path, transform';
+      });
+      const showHead = (h) => { h.style.clipPath = 'inset(0 0 -12% 0)'; h.style.transform = 'none'; };
+      if (!('IntersectionObserver' in window)) { heads.forEach(showHead); }
+      else {
+        const ho = new IntersectionObserver((ents) => {
+          ents.forEach((e) => { if (e.isIntersecting) { showHead(e.target); ho.unobserve(e.target); } });
+        }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+        heads.forEach((h) => ho.observe(h));
+        setTimeout(() => heads.forEach(showHead), 2600);
+      }
+    }
+
+    // --- Header gains presence once you scroll ---
+    const headerBar = root.querySelector('header > div');
+    if (headerBar) {
+      headerBar.style.transition = 'box-shadow 300ms ease, background-color 300ms ease, transform 300ms ease';
+      const onH = () => {
+        const y = window.scrollY || window.pageYOffset || 0;
+        if (y > 24) {
+          headerBar.style.boxShadow = '0 12px 40px rgba(44,44,44,.16)';
+          headerBar.style.background = 'rgba(255,255,255,.94)';
+        } else {
+          headerBar.style.boxShadow = '0 6px 30px rgba(44,44,44,.08)';
+          headerBar.style.background = 'rgba(255,255,255,.8)';
+        }
+      };
+      onH();
+      window.addEventListener('scroll', onH, { passive: true });
+      this._headerScroll = onH;
+    }
+
+    // --- Warm light follows the cursor across the hero ---
+    const glow = root.querySelector('[data-hero-glow]');
+    const heroBox = root.querySelector('#hero > div');
+    const finePointer = !window.matchMedia || window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (glow && heroBox && finePointer && !reduce) {
+      let raf = 0;
+      const move = (ev) => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          const r = heroBox.getBoundingClientRect();
+          glow.style.left = (ev.clientX - r.left) + 'px';
+          glow.style.top = (ev.clientY - r.top) + 'px';
+          glow.style.opacity = '0.85';
+          raf = 0;
+        });
+      };
+      const leave = () => { glow.style.opacity = '0'; };
+      heroBox.addEventListener('pointermove', move);
+      heroBox.addEventListener('pointerleave', leave);
+      this._glowMove = move; this._glowLeave = leave; this._heroBox = heroBox;
+    }
+
+    // --- Slow "breathing" on the decorative accent glows ---
+    if (!reduce) {
+      const accents = Array.prototype.slice.call(root.querySelectorAll('[style*="radial-gradient(closest-side"]'))
+        .filter((el) => el.getAttribute('style').indexOf('transform: translateX(-50%)') !== -1 || el.getAttribute('style').indexOf('translateX(-50%)') !== -1);
+      accents.forEach((el, i) => {
+        el.style.animation = 'hb_breathe ' + (7 + i) + 's ease-in-out ' + (i * 0.6) + 's infinite alternate';
+      });
+    }
+  }
+
+  _startHeroRotator(root) {
+    const word = document.querySelector('[data-rotate-word]');
+    if (!word) return;
+    if (this._rotTimer) clearInterval(this._rotTimer);
+    const words = [
+      'a coffee companion', 'a guitarist', 'an investor', 'a hiking friend',
+      'a fashion designer', 'a dietician', 'a yoga teacher', 'a wine explorer',
+      'a trip buddy', 'a cooking partner', 'a gaming buddy', 'an influencer',
+      'a morning runner', 'a book lover', 'a chess rival', 'a film buff',
+      'a language partner', 'a photography buddy', 'a startup mentor', 'a dance partner',
+      'a tennis partner', 'a museum companion', 'a podcast co-host', 'a study buddy',
+      'a swimming partner', 'a pottery teacher', 'a meditation guide', 'a baking partner',
+      'a concert companion', 'a cycling buddy', 'a sketching partner', 'a career coach',
+      'a climbing partner', 'a gardening friend', 'a board-game rival', 'a brunch companion'
+    ];
+    let i = 0;
+    word.textContent = words[0];
+    const tick = () => {
+      // slide current word up and fade out
+      word.style.transition = 'transform 320ms cubic-bezier(.4,0,1,1), opacity 320ms cubic-bezier(.4,0,1,1)';
+      word.style.transform = 'translateY(-115%)';
+      word.style.opacity = '0';
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        word.textContent = words[i];
+        // jump below, no transition
+        word.style.transition = 'none';
+        word.style.transform = 'translateY(115%)';
+        word.style.opacity = '0';
+        void word.offsetWidth; // force reflow
+        // ease + gentle spring up into place
+        word.style.transition = 'transform 440ms cubic-bezier(.34,1.56,.64,1), opacity 360ms cubic-bezier(.4,0,.2,1)';
+        word.style.transform = 'translateY(0)';
+        word.style.opacity = '1';
+      }, 330);
+    };
+    this._rotTimer = setInterval(tick, 2200);
+  }
+
+  _startFaq(root) {
+    // Delegate on document so clicks keep working after the component re-renders
+    // and React swaps the accordion's DOM nodes (direct listeners would go stale).
+    if (!this._faqBound) {
+      this._faqBound = true;
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest && e.target.closest('[data-faq-q]');
+        if (!btn) return;
+        const item = btn.closest('[data-faq-item]');
+        if (!item) return;
+        const ans = item.querySelector('[data-faq-a]');
+        const ic = item.querySelector('[data-faq-icon]');
+        if (!ans) return;
+        const open = item.getAttribute('data-open') !== '1';
+        ans.style.maxHeight = open ? (ans.scrollHeight + 'px') : '0px';
+        if (ic) ic.style.transform = open ? 'rotate(180deg)' : 'none';
+        item.setAttribute('data-open', open ? '1' : '0');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    // open the first by default (query live each mount)
+    const items = Array.prototype.slice.call(document.querySelectorAll('[data-faq-item]'));
+    if (!items.length) return;
+    items.forEach((item) => {
+      const ans = item.querySelector('[data-faq-a]');
+      const ic = item.querySelector('[data-faq-icon]');
+      const btn = item.querySelector('[data-faq-q]');
+      const open = item.getAttribute('data-open') === '1';
+      if (ans) ans.style.maxHeight = open ? (ans.scrollHeight + 'px') : '0px';
+      if (ic) ic.style.transform = open ? 'rotate(180deg)' : 'none';
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    const first = items[0];
+    const fa = first.querySelector('[data-faq-a]');
+    const fi = first.querySelector('[data-faq-icon]');
+    if (fa && first.getAttribute('data-open') !== '1') {
+      fa.style.maxHeight = fa.scrollHeight + 'px';
+      first.setAttribute('data-open', '1');
+      if (fi) fi.style.transform = 'rotate(180deg)';
+      const fb = first.querySelector('[data-faq-q]');
+      if (fb) fb.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  _startCalendar(root) {
+    const grid = root.querySelector('[data-cal-grid]');
+    if (!grid) return;
+    const monthEl = root.querySelector('[data-cal-month]');
+    const times = Array.prototype.slice.call(root.querySelectorAll('[data-cal-time]'));
+    const aps = Array.prototype.slice.call(root.querySelectorAll('[data-cal-ap]'));
+    const summary = root.querySelector('[data-cal-summary]');
+    const confirm = root.querySelector('[data-cal-confirm]');
+    const success = root.querySelector('[data-cal-success]');
+    const successSub = root.querySelector('[data-cal-success-sub]');
+    const MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const now = new Date();
+    const year = now.getFullYear(), month = now.getMonth(), today = now.getDate();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDow = new Date(year, month, 1).getDay();
+    let cells = '';
+    for (let i = 0; i < firstDow; i++) cells += '<span style="aspect-ratio:1;"></span>';
+    for (let d = 1; d <= daysInMonth; d++) {
+      if (d < today) {
+        cells += '<span style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-family:var(--font-body); font-size:12.5px; color:var(--muted-2); opacity:.35;">' + d + '</span>';
+      } else {
+        cells += '<span data-cal-day="' + d + '" style="aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-family:var(--font-body); font-size:12.5px; color:#2c2c2c; border-radius:999px; cursor:pointer; transition:background-color 150ms, color 150ms;">' + d + '</span>';
+      }
+    }
+    grid.innerHTML = cells;
+    if (monthEl) monthEl.textContent = MON[month] + ' ' + year;
+    const days = Array.prototype.slice.call(grid.querySelectorAll('[data-cal-day]'));
+    const state = { day: today, time: '10:30', ap: 'AM' };
+    const setDay = (el, on) => { el.style.setProperty('background-color', on ? '#c96a3d' : 'transparent', 'important'); el.style.setProperty('color', on ? '#ffffff' : '#2c2c2c', 'important'); el.style.fontWeight = on ? '700' : '400'; };
+    const setPill = (el, on) => { el.style.setProperty('background-color', on ? '#c96a3d' : '#e6d5c3', 'important'); el.style.setProperty('color', on ? '#ffffff' : '#4a4543', 'important'); el.style.fontWeight = on ? '700' : '600'; };
+    const fmt = () => { const sd = new Date(year, month, state.day); return DOW[sd.getDay()] + ', ' + MON[month].slice(0, 3) + ' ' + state.day; };
+    const render = () => {
+      days.forEach((d) => setDay(d, parseInt(d.getAttribute('data-cal-day'), 10) === state.day));
+      times.forEach((t) => setPill(t, t.getAttribute('data-cal-time') === state.time));
+      aps.forEach((a) => setPill(a, a.getAttribute('data-cal-ap') === state.ap));
+      if (summary) summary.textContent = (state.day && state.time && state.ap) ? (fmt() + ' · ' + state.time + ' ' + state.ap) : 'Pick a day and time';
+    };
+    days.forEach((d) => d.addEventListener('click', () => { state.day = parseInt(d.getAttribute('data-cal-day'), 10); render(); }));
+    times.forEach((t) => t.addEventListener('click', () => { state.time = t.getAttribute('data-cal-time'); render(); }));
+    aps.forEach((a) => a.addEventListener('click', () => { state.ap = a.getAttribute('data-cal-ap'); render(); }));
+    if (confirm) confirm.addEventListener('click', () => {
+      if (successSub) successSub.textContent = 'See you ' + fmt() + ' at ' + state.time + ' ' + state.ap + '.';
+      confirm.style.display = 'none';
+      if (summary) summary.style.display = 'none';
+      if (success) success.style.display = 'block';
+    });
+    render();
+  }
+
+  _startTrust(root) {
+    const hexes = Array.prototype.slice.call(root.querySelectorAll('[data-trust-hex]'));
+    const panels = Array.prototype.slice.call(root.querySelectorAll('[data-trust-panel]'));
+    if (!hexes.length || !panels.length) return;
+    const setActive = (i) => {
+      hexes.forEach((h, idx) => {
+        const on = idx === i;
+        h.style.background = on ? 'var(--accent-soft-2)' : 'var(--panel)';
+        h.style.transform = on ? 'translateY(-5px) scale(1.05)' : 'none';
+        h.style.filter = on ? 'drop-shadow(0 16px 26px rgba(201,106,61,.3))' : 'drop-shadow(0 8px 16px rgba(44,44,44,.1))';
+        h.style.zIndex = on ? '2' : '1';
+        const lbl = h.querySelector('[data-trust-label]');
+        if (lbl) lbl.style.color = on ? 'var(--text)' : 'var(--muted)';
+      });
+      panels.forEach((p, idx) => {
+        const on = idx === i;
+        p.style.opacity = on ? '1' : '0';
+        p.style.transform = on ? 'translateY(0)' : 'translateY(8px)';
+        p.style.pointerEvents = on ? 'auto' : 'none';
+      });
+    };
+    hexes.forEach((h, idx) => {
+      h.addEventListener('click', () => setActive(idx));
+      h.addEventListener('mouseenter', () => setActive(idx));
+    });
+    setActive(0);
+  }
+
+  _startHowScroll(root) {
+    if (!document.querySelector('[data-how]')) return;
+    const onScroll = () => {
+      // Query the live document each frame: this._root / captured nodes go stale
+      // when the component re-renders and React swaps the DOM subtree.
+      const section = document.querySelector('[data-how]');
+      const track = document.querySelector('[data-how-track]');
+      if (!section || !track) return;
+      const fill = document.querySelector('[data-how-fill]');
+      const dots = Array.prototype.slice.call(document.querySelectorAll('[data-how-dot]'));
+      const vh = window.innerHeight;
+      const total = section.offsetHeight - vh;
+      if (total <= 0) { track.style.transform = 'translate3d(0,0,0)'; return; }
+      let p = -section.getBoundingClientRect().top / total;
+      p = Math.max(0, Math.min(1, p));
+      // Count only the slide panels, excluding the decorative connector overlay.
+      const panelCount = Array.prototype.filter.call(track.children, function (c) {
+        return !c.hasAttribute('data-how-connector');
+      }).length;
+      const maxX = (panelCount - 1) * window.innerWidth;
+      track.style.transform = 'translate3d(' + (-p * maxX) + 'px,0,0)';
+      if (fill) fill.style.width = (p * 100) + '%';
+      if (dots.length) {
+        const idx = Math.round(p * 3); // 0 = intro, 1..3 = steps
+        dots.forEach((d, i) => {
+          d.style.color = (idx >= 1 && i === idx - 1) ? 'var(--accent)' : 'var(--muted-2)';
+        });
+      }
+    };
+    this._howScroll = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  }
+
+  _startMosaic(root) {
+    if (this.props.mosaicCycle === false) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const grid = root.querySelector('#mosaic-grid');
+    if (!grid) return;
+    const tiles = Array.prototype.slice.call(grid.children);
+    if (tiles.length < 2) return;
+    tiles.forEach((t) => { t.style.position = 'relative'; });
+
+    const pool = [
+      'assets/photography/m_hike_group.png', 'assets/photography/m_badminton_court.png',
+      'assets/photography/m_cycling_pair.png', 'assets/photography/m_board_games.png',
+      'assets/photography/m_pottery.png', 'assets/photography/m_home_cooking.png',
+      'assets/photography/m_gaming_night.png', 'assets/photography/m_riverside_walk.png',
+      'assets/photography/m_coffee_couple.png', 'assets/photography/m_yoga_pair.png',
+      'assets/photography/m_guitar_solo.png', 'assets/photography/m_reading_chair.png',
+      'assets/photography/coffee_convo.png', 'assets/photography/morning_jog.png',
+      'assets/photography/two_girls_play_badminton.png', 'assets/photography/uncle_dog_walk.png',
+      'assets/photography/two_boys_tour.png', 'assets/photography/club_night.png',
+      'assets/photography/sunrise_hike.png', 'assets/photography/yoga_studio.png',
+      'assets/photography/developers_in_group.png',
+    ];
+    const largePool = [
+      'assets/photography/sunrise_hike.png', 'assets/photography/morning_jog.png',
+      'assets/photography/coffee_convo.png', 'assets/photography/two_girls_play_badminton.png',
+      'assets/photography/uncle_dog_walk.png', 'assets/photography/two_boys_tour.png',
+      'assets/photography/club_night.png', 'assets/photography/yoga_studio.png',
+      'assets/photography/developers_in_group.png', 'assets/photography/companion_art.png',
+      'assets/photography/companion_pickleball.png', 'assets/photography/companion_coffee.png',
+    ];
+    pool.concat(largePool).forEach((src) => { const i = new Image(); i.src = src; });
+
+    const swapTile = (tile) => {
+      if (tile._busy) return;
+      const base = tile.querySelector('img');
+      if (!base) return;
+      const shown = tiles.map((t) => { const im = t.querySelector('img'); return im ? im.getAttribute('src') : null; });
+      const srcPool = (tile.getBoundingClientRect().width > 240) ? largePool : pool;
+      const candidates = srcPool.filter((s) => shown.indexOf(s) === -1);
+      if (!candidates.length) return;
+      const next = candidates[Math.floor(Math.random() * candidates.length)];
+      tile._busy = true;
+      const layer = base.cloneNode(false);
+      layer.setAttribute('src', next);
+      layer.style.position = 'absolute';
+      layer.style.left = '0';
+      layer.style.top = '0';
+      layer.style.width = '100%';
+      layer.style.height = '100%';
+      layer.style.opacity = '0';
+      layer.style.transition = 'opacity 500ms cubic-bezier(.4,0,.2,1)';
+      tile.appendChild(layer);
+      requestAnimationFrame(() => { requestAnimationFrame(() => { layer.style.opacity = '1'; }); });
+      setTimeout(() => {
+        base.setAttribute('src', next);
+        if (layer.parentNode) layer.parentNode.removeChild(layer);
+        tile._busy = false;
+      }, 540);
+    };
+    tiles.forEach((tile) => { tile.style.cursor = 'pointer'; tile.addEventListener('mouseenter', () => swapTile(tile)); });
+  }
+}
+</script>
+</body>
+</html>

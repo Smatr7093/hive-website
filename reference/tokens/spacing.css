@@ -1,0 +1,30 @@
+/* ── Hive spacing, radius & elevation tokens ──
+   8pt grid: every value a multiple of 4px, core step 8px.
+   Screen edge margin is always 16px minimum. */
+
+:root {
+  /* ── Spacing scale ── */
+  --space-1:  4px;   /* icon-to-text gap, badge padding */
+  --space-2:  8px;   /* compact padding, chip gaps */
+  --space-3:  12px;  /* input padding, button gaps */
+  --space-4:  16px;  /* card padding, screen edge margin */
+  --space-5:  20px;  /* tab bar items, nav padding */
+  --space-6:  24px;  /* section internal spacing */
+  --space-8:  32px;  /* between cards, large gaps */
+  --space-10: 40px;  /* section separators */
+  --space-12: 48px;  /* modal padding, sheet handle */
+  --space-16: 64px;  /* screen top clearance, hero breathing */
+
+  /* ── Border radius ── */
+  --radius-sm:   6px;    /* tags, progress bars, inline */
+  --radius-md:   12px;   /* inputs, small buttons, chips */
+  --radius-lg:   18px;   /* cards, large inputs, default buttons */
+  --radius-xl:   24px;   /* bottom sheets, modals, feature cards */
+  --radius-full: 999px;  /* pills, avatars, FABs, primary CTAs */
+
+  /* ── Elevation (warm charcoal shadows) ── */
+  --elevation-1: 0 1px 3px rgba(44, 44, 44, 0.08);   /* cards at rest, list items */
+  --elevation-2: 0 4px 12px rgba(44, 44, 44, 0.10);  /* elevated cards, dropdowns */
+  --elevation-3: 0 8px 24px rgba(44, 44, 44, 0.12);  /* modals, action sheets, FABs */
+  --elevation-4: 0 16px 48px rgba(44, 44, 44, 0.16); /* bottom sheets, overlays */
+}
