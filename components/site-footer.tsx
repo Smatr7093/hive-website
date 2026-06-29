@@ -59,7 +59,7 @@ export function SiteFooter() {
               in.&rdquo;
             </p>
             <div className="flex justify-center">
-              <Button variant="secondary" icon={<ArrowRight size={18} />}>
+              <Button variant="secondary" icon={<ArrowRight size={18} />} href="#safety">
                 Start with a Hi
               </Button>
             </div>
