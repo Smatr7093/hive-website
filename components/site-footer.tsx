@@ -74,18 +74,14 @@ export function SiteFooter() {
             <p className="my-4 max-w-[260px] font-body text-sm leading-relaxed text-muted">
               Find people nearby who share what you love, and book real time together.
             </p>
-            <div className="flex flex-wrap gap-2.5">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 font-body text-[13px] font-semibold text-white no-underline"
-              >
-                Download for iOS
+            <div className="flex flex-wrap items-center gap-2.5">
+              <a href="#" aria-label="Download on the App Store">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/badges/app-store-badge.svg" alt="Download on the App Store" className="h-10 w-auto" />
               </a>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-full bg-charcoal px-4 py-2.5 font-body text-[13px] font-semibold text-white no-underline"
-              >
-                Get it on Android
+              <a href="#" aria-label="Get it on Google Play">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/badges/google-play-badge.svg" alt="Get it on Google Play" className="h-10 w-auto" />
               </a>
             </div>
           </div>
