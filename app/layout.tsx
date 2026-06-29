@@ -18,6 +18,7 @@ const body = Noto_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tryhive.in'),
   title: 'Hive · Find people who want to be there',
   description:
     'Find people nearby who share what you love, and book real, unhurried time together. No swiping. No pressure. Book time, not expectations.',
@@ -27,7 +28,23 @@ export const metadata: Metadata = {
     description:
       'Find people nearby who share what you love, and book real time together. Connection without pressure.',
     type: 'website',
-    images: ['/assets/app_icon/app_icon.png'],
+    url: 'https://tryhive.in',
+    siteName: 'Hive',
+    images: [
+      {
+        url: '/assets/og/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hive — Find people who want to be there',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hive · Find people who want to be there',
+    description:
+      'Find people nearby who share what you love, and book real time together. Connection without pressure.',
+    images: ['/assets/og/og-image.jpg'],
   },
 };
 
