@@ -75,7 +75,7 @@ export function BecomeCompanion() {
               ))}
             </div>
             <div className="mt-7">
-              <Button variant="primary" icon={<ArrowRight size={18} />}>
+              <Button variant="primary" href="/become-a-companion" icon={<ArrowRight size={18} />}>
                 Become a Companion
               </Button>
             </div>

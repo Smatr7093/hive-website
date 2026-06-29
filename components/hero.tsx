@@ -142,7 +142,7 @@ export function Hero() {
                   Start with a Hi
                 </Button>
                 <a
-                  href="#companion"
+                  href="/become-a-companion"
                   className="group inline-flex h-[52px] items-center justify-center gap-2.5 rounded-full border border-white/30 bg-white/10 px-6 font-body text-base font-semibold text-white no-underline backdrop-blur-md transition-colors duration-200 hover:border-white/50 hover:bg-white/20"
                 >
                   <span className="hexagon h-3 w-2.5 bg-accent transition-transform duration-200 group-hover:rotate-[30deg]" />
