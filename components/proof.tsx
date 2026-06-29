@@ -19,7 +19,7 @@ function Marquee({ images, direction }: { images: string[]; direction: 'left' | 
           // eslint-disable-next-line @next/next/no-img-element
           <img
             key={`${name}-${i}`}
-            src={`/assets/photography/${name}.png`}
+            src={`/assets/photography/${name}.webp`}
             alt=""
             className="h-[166px] w-[248px] shrink-0 rounded-2xl object-cover shadow-[var(--elevation-1)]"
           />

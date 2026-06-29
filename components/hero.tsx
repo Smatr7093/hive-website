@@ -81,7 +81,7 @@ export function Hero() {
         <motion.div
           role="img"
           aria-label="People meeting and passing time at a street-side cafe"
-          style={{ y, backgroundImage: "url('/assets/photography/hero_street_cafe.png')" }}
+          style={{ y, backgroundImage: "url('/assets/photography/hero_street_cafe.webp')" }}
           className="absolute inset-0 bg-[#1c1a18] bg-cover bg-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(28,26,24,.88)] via-[rgba(28,26,24,.4)] to-transparent md:via-[rgba(28,26,24,.22)]" />

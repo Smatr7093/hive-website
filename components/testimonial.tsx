@@ -15,7 +15,7 @@ export function Testimonial() {
           <div className="aspect-[5/4] w-full overflow-hidden rounded-[3px] bg-beige">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/photography/uncle_dog_walk.png"
+              src="/assets/photography/uncle_dog_walk.webp"
               alt="Two friends on a morning walk"
               className="h-full w-full object-cover"
             />

@@ -36,7 +36,7 @@ export function SiteFooter() {
         <div className="relative flex min-h-[460px] items-center justify-center overflow-hidden rounded-[40px] text-center shadow-[0_34px_80px_rgba(44,44,44,.24)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/photography/cta_friends_coffee.png"
+            src="/assets/photography/cta_friends_coffee.webp"
             alt="Friends sharing coffee together at home"
             className="absolute inset-0 h-full w-full object-cover"
             style={{ objectPosition: 'center 18%' }}

@@ -91,7 +91,7 @@ export function BecomeCompanion() {
             >
               <div className="aspect-[4/3] overflow-hidden rounded-[20px] bg-panel shadow-[0_22px_46px_rgba(44,44,44,.18)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/assets/photography/${s.img}.png`} alt={s.alt} className="h-full w-full object-cover" />
+                <img src={`/assets/photography/${s.img}.webp`} alt={s.alt} className="h-full w-full object-cover" />
               </div>
               <figcaption className="pt-4">
                 <div className="flex items-center gap-2">

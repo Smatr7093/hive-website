@@ -63,7 +63,7 @@ export function ThisWeek() {
           >
             <div className="relative h-[188px] bg-beige">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/assets/photography/${t.img}.png`} alt="" className="h-full w-full object-cover" />
+              <img src={`/assets/photography/${t.img}.webp`} alt="" className="h-full w-full object-cover" />
               <div className="absolute left-3 top-3">
                 <Chip tone={t.tone}>{t.badge}</Chip>
               </div>

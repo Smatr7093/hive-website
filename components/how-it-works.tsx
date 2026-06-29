@@ -52,7 +52,7 @@ export function HowItWorks() {
             <div className="flex h-[min(70vh,620px)] w-full items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/photography/discover_filters_mock.png"
+                src="/assets/photography/discover_filters_mock.webp"
                 alt="Hive Discover screen showing verified companions nearby, with filters for availability, interests, and distance"
                 className="max-h-full max-w-full object-contain"
               />
@@ -77,7 +77,7 @@ export function HowItWorks() {
             <div className="flex h-[min(70vh,620px)] w-full items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/photography/booking_flow_mock.png"
+                src="/assets/photography/booking_flow_mock.webp"
                 alt="Hive booking flow: choosing a time and confirming a coffee with Ananya"
                 className="max-h-full max-w-full object-contain"
               />
@@ -88,7 +88,7 @@ export function HowItWorks() {
           <div className="relative flex h-full w-screen shrink-0 items-end">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/photography/sunrise_hike.png"
+              src="/assets/photography/sunrise_hike.webp"
               alt="Friends out living the moment"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -166,13 +166,13 @@ export function HowItWorksMobile() {
           </h3>
           <p className="mb-5 font-body text-base leading-relaxed text-muted">{s.body}</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`/assets/photography/${s.img}.png`} alt="" className="w-full rounded-2xl" />
+          <img src={`/assets/photography/${s.img}.webp`} alt="" className="w-full rounded-2xl" />
         </div>
       ))}
 
       <div className="relative -mx-6 overflow-hidden rounded-2xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/photography/sunrise_hike.png" alt="Friends out living the moment" className="h-[60vh] w-full object-cover" />
+        <img src="/assets/photography/sunrise_hike.webp" alt="Friends out living the moment" className="h-[60vh] w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[rgba(28,26,24,.85)] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-6">
           <span className="mb-3 inline-flex items-center gap-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-[#f0c9b4]">
