@@ -18,7 +18,7 @@ const COMPANY_LINKS = [
 ];
 
 const SUPPORT_LINKS = [
-  { href: '#safety', label: 'Trust & safety' },
+  { href: '/trust-safety', label: 'Trust & safety' },
   { href: 'mailto:gethive.app01@gmail.com', label: 'Contact us' },
   { href: '/community-guidelines', label: 'Community guidelines' },
 ];
