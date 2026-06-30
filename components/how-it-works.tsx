@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'motion/react';
 
 const STEP_LABELS = ['01 Browse', '02 Book', '03 Meet'];
 
@@ -10,6 +10,10 @@ export function HowItWorks() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
   const fill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const [activeStep, setActiveStep] = useState(-1);
+  useMotionValueEvent(scrollYProgress, 'change', (p) => {
+    setActiveStep(p >= 0.83 ? 2 : p >= 0.5 ? 1 : p >= 0.17 ? 0 : -1);
+  });
 
   return (
     <section ref={sectionRef} id="how" className="relative z-[2] hidden h-[400vh] bg-bg md:block">
@@ -120,7 +124,13 @@ export function HowItWorks() {
           {STEP_LABELS.map((label, i) => (
             <span key={label} className="flex items-center gap-2">
               {i > 0 && <span className="text-[var(--border-2)]">·</span>}
-              <span className="font-body text-[12.5px] font-bold text-muted-2">{label}</span>
+              <span
+                className={`font-body text-[12.5px] font-bold transition-colors duration-300 ${
+                  i <= activeStep ? 'text-accent' : 'text-muted-2'
+                }`}
+              >
+                {label}
+              </span>
             </span>
           ))}
         </div>
