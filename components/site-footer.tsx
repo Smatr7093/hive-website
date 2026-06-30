@@ -18,7 +18,7 @@ const COMPANY_LINKS = [
 ];
 
 const SUPPORT_LINKS = [
-  { href: '#safety', label: 'Trust & safety' },
+  { href: '/#safety', label: 'Trust & safety' },
   { href: 'mailto:gethive.app01@gmail.com', label: 'Contact us' },
   { href: '/community-guidelines', label: 'Community guidelines' },
 ];
@@ -59,7 +59,7 @@ export function SiteFooter() {
               in.&rdquo;
             </p>
             <div className="flex justify-center">
-              <Button variant="secondary" icon={<ArrowRight size={18} />}>
+              <Button variant="secondary" icon={<ArrowRight size={18} />} href="#safety">
                 Start with a Hi
               </Button>
             </div>
