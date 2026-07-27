@@ -28,6 +28,9 @@ export function LegalFoot() {
       <Link href="/community-guidelines" className="mx-2.5 font-body text-[13.5px] text-muted no-underline">
         Community guidelines
       </Link>
+      <Link href="/delete-account" className="mx-2.5 font-body text-[13.5px] text-muted no-underline">
+        Delete account
+      </Link>
       <span className="mt-3.5 block font-body text-[13px] text-muted-2">© 2026 Hive · Book time, not expectations</span>
     </div>
   );
