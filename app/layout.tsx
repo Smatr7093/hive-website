@@ -1,22 +1,19 @@
 // app/layout.tsx — font swap to Hive's Quicksand + Noto Sans.
 // Replaces the current Inter/Space Grotesk setup. Keep the rest of your shell.
-
 import type { Metadata } from 'next';
 import { Quicksand, Noto_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
-
 const display = Quicksand({
   subsets: ['latin'],
   weight: ['600', '700'],
   variable: '--font-display',
 });
-
 const body = Noto_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-body',
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://tryhive.in'),
   title: 'Hive · Find people who want to be there',
@@ -47,10 +44,25 @@ export const metadata: Metadata = {
     images: ['/assets/og/og-image.jpg'],
   },
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RX60CPR16S"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RX60CPR16S');
+          `}
+        </Script>
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>
