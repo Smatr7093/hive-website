@@ -27,6 +27,7 @@ const LEGAL_LINKS = [
   { href: '/privacy', label: 'Privacy' },
   { href: '/terms', label: 'Terms' },
   { href: '/refund', label: 'Refund policy' },
+  { href: '/child-safety', label: 'Child safety' },
   { href: '/delete-account', label: 'Delete account' },
 ];
 
