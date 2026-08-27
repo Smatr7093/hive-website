@@ -28,6 +28,9 @@ export function LegalFoot() {
       <Link href="/community-guidelines" className="mx-2.5 font-body text-[13.5px] text-muted no-underline">
         Community guidelines
       </Link>
+      <Link href="/child-safety" className="mx-2.5 font-body text-[13.5px] text-muted no-underline">
+        Child safety
+      </Link>
       <Link href="/delete-account" className="mx-2.5 font-body text-[13.5px] text-muted no-underline">
         Delete account
       </Link>
